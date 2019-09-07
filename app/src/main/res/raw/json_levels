@@ -1,0 +1,57 @@
+[
+  {
+    "gameBoard": [
+      [
+        1,
+        2,
+        3,
+        4
+      ],
+      [
+        3,
+        2,
+        4,
+        1
+      ]
+    ,
+      [
+        4,
+        1,
+        2,
+        3
+      ]
+    ],
+    "layoutNumber": 0,
+    "levelNumber": 1,
+    "resultBoard": [
+      [
+        0
+      ]
+    ],
+    "threeStarsCount": 10,
+    "twoStarsCount": 10,
+    "multipler": 1
+  },
+  {
+    "gameBoard": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "layoutNumber": 1,
+    "levelNumber": 1,
+    "resultBoard": [
+      [
+        0
+      ]
+    ],
+    "threeStarsCount": 10,
+    "twoStarsCount": 10,
+    "multipler": 1
+  }
+]

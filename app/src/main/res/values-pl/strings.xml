@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="PLAY">Graj</string>
+    <string name="MODES">Tryb</string>
+    <string name="SETTINGS">Ustawienia</string>
+    <string name="BONUS">BONUS</string>
+    <string name="LEVEL">Poziom</string>
+    <string name="MOVES">RUCHY</string>
+    <string name="SHARED_KEY">QUADRATES_PREF</string>
+    <string name="NEXT_LEVEL">Dalej</string>
+    <string name="MOVES_RESULT">RUCHÓW</string>
+    <string name="SHARE">Udostępnij na Facebooku</string>
+    <string name="PERFECT">Perfekcyjnie!</string>
+    <string name="NICE">Super!</string>
+    <string name="CONGRATS">Gratulacje!</string>
+    <string name="TUT_STERING">Aby kontrolować kwadrat, przesuń palcem w lewo/prawo lub górę/dół.</string>
+    <string name="TUT_PREVIEW">Przytrzymaj przycisk podglądu, aby zobaczyć poprawny układ kwadratów.</string>
+    <string name="TUT_POINTS">Pamiętaj! Im mniej ruchów tym więcej punktów!</string>
+    <string name="EXIT">Wyjście</string>
+    <string name="EXIT_2">Czy na pewno chcesz wyjść?</string>
+    <string name="YES">Tak</string>
+    <string name="NO">Nie</string>
+</resources>

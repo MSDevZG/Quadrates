@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name" translatable="false">Quadrates</string>
+    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+
+    <string name="PLAY">Play</string>
+    <string name="MODES">Modes</string>
+    <string name="SETTINGS">Settings</string>
+    <string name="BONUS">BONUS</string>
+    <string name="LEVEL">Level</string>
+    <string name="MOVES">MOVES</string>
+    <string name="SHARED_KEY">QUADRATES_PREF</string>
+    <string name="NEXT_LEVEL">Next</string>
+    <string name="MOVES_RESULT">MOVES</string>
+    <string name="SHARE">Share to Facebook</string>
+    <string name="PERFECT">Perfect!</string>
+    <string name="NICE">Nice!</string>
+    <string name="CONGRATS">Congrats!</string>
+    <string name="TUT_STERING">To control the square, move your finger to the left/right or up/down.</string>
+    <string name="TUT_PREVIEW">Hold the preview button to see the correct set of squares.</string>
+    <string name="TUT_POINTS">Remember! The fewer moves the more points!</string>
+    <string name="EXIT">Exit</string>
+    <string name="EXIT_2">Are you sure you want to exit?</string>
+    <string name="YES">Yes</string>
+    <string name="NO">No</string>
+</resources>
