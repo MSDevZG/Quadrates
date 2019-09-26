@@ -15,10 +15,9 @@ import dev.msk.quadrates.Models.Level;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static List<Level> listOfLevels = new ArrayList<>();
     static FragmentManager fragmentManager;
     static FragmentTransaction fragmentTransaction;
-
-    public static List<Level> listOfLevels = new ArrayList<>();
 
     public static void setFragment(Fragment fragment) {
         fragmentTransaction = fragmentManager.beginTransaction();

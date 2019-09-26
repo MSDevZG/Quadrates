@@ -4,4 +4,9 @@
         <item name="android:windowFullscreen">true</item>
         <item name="windowActionBar">false</item>
     </style>
+
+    <style name="WinDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/anim_dialog_win_enter</item>
+    </style>
+
 </resources>

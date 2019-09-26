@@ -4,7 +4,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -42,6 +45,12 @@ public class Helper {
         }
     }
 
+    //SET ANIMATION
+    public static void setAnim(View view, int animationID) {
+        Animation animation = AnimationUtils.loadAnimation(view.getContext(), animationID);
+        view.startAnimation(animation);
+    }
+
     // LOAD LEVELS
     public static List<Level> loadLevels(Context context) {
         Resources res = context.getResources();
@@ -61,13 +70,6 @@ public class Helper {
 
     // SAVE LEVELS
     public static void saveLevels(Context context, List<Level> levels) {
-
-    }
-
-    // SHOW CURRENT LAYOUT
-    public static void showCurrentLayout(List<View> layouts, short currentLayout) {
-        View view = layouts.get(currentLayout);
-        view.setVisibility(VISIBLE);
     }
 
     // GENERATE LEVELS
@@ -160,11 +162,11 @@ public class Helper {
     }
 
     //SET TOUCH LISTENER
-    public static void setTouchListener(byte multipler, List<List<ImageView>> listOfImages, Level level) {
+    public static void setTouchListener(byte multipler, List<List<ImageView>> listOfImages, Level level, TextView moves, ImageView img_third_star, ImageView img_second_star) {
         for (List<ImageView> row : listOfImages) {
             for (ImageView imageView : row) {
                 switch (multipler) {
-                    case 1: imageView.setOnTouchListener(new BlockX1TouchListener(level, listOfImages));
+                    case 1: imageView.setOnTouchListener(new BlockX1TouchListener(level, listOfImages, moves, img_third_star, img_second_star));
                         break;
                     case 2: imageView.setOnTouchListener(new BlockX2TouchListener());
                         break;
@@ -172,6 +174,30 @@ public class Helper {
                         break;
                 }
             }
+        }
+    }
+
+    //CHECKER
+    public static boolean checker(byte[][] gameBoard, byte[][] resultBoard) {
+        for (int x = 0; x < gameBoard.length; x++) {
+            for (int y = 0; y < gameBoard[x].length; y++) {
+                if (gameBoard[x][y] != resultBoard[x][y]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    //CHECK STARS
+    public static void checkStars(Level level, ImageView img_third_star, ImageView img_second_star, int moves) {
+        if (level.getThreeStarsCount() < moves) {
+            img_third_star.setImageResource(R.drawable.img_star_empty_small);
+            img_third_star.clearAnimation();
+        }
+        if (level.getTwoStarsCount() < moves) {
+            img_second_star.setImageResource(R.drawable.img_star_empty_small);
+            img_second_star.clearAnimation();
         }
     }
 }

@@ -3,23 +3,34 @@ package dev.msk.quadrates.Listeners;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.List;
 
+import dev.msk.quadrates.CustomViews.ResultDialog;
 import dev.msk.quadrates.Models.Level;
+import dev.msk.quadrates.R;
 
+import static dev.msk.quadrates.Helper.checkStars;
+import static dev.msk.quadrates.Helper.checker;
 import static dev.msk.quadrates.Helper.drawBlocks;
+import static dev.msk.quadrates.Helper.setAnim;
 
 public class BlockX1TouchListener implements View.OnTouchListener {
     private Level level;
     private List<List<ImageView>> listOfImages;
+    private TextView moves;
+    private ImageView img_third_star, img_second_star;
 
     private float x1 = 0, x2 = 0, y1 = 0, y2 = 0;
     private short SLIDE_LENGTH = 150;
 
-    public BlockX1TouchListener(Level level, List<List<ImageView>> listOfImages) {
+    public BlockX1TouchListener(Level level, List<List<ImageView>> listOfImages, TextView moves, ImageView img_third_star, ImageView img_second_star) {
         this.level = level;
         this.listOfImages = listOfImages;
+        this.moves = moves;
+        this.img_second_star = img_second_star;
+        this.img_third_star = img_third_star;
     }
 
     @Override
@@ -149,7 +160,7 @@ public class BlockX1TouchListener implements View.OnTouchListener {
         }
         gameBoard[row][0] = bufor;
         level.setGameBoard(gameBoard);
-        drawBlocks(gameBoard, listOfImages);
+        afterMove();
     }
 
     public void turnLeft(byte row) {
@@ -160,7 +171,7 @@ public class BlockX1TouchListener implements View.OnTouchListener {
         }
         gameBoard[row][gameBoard[row].length - 1] = bufor;
         level.setGameBoard(gameBoard);
-        drawBlocks(gameBoard, listOfImages);
+        afterMove();
     }
 
     public void turnUp(byte column) {
@@ -171,7 +182,7 @@ public class BlockX1TouchListener implements View.OnTouchListener {
         }
         gameBoard[gameBoard.length - 1][column] = bufor;
         level.setGameBoard(gameBoard);
-        drawBlocks(gameBoard, listOfImages);
+        afterMove();
     }
 
     public void turnDown(byte column) {
@@ -182,6 +193,17 @@ public class BlockX1TouchListener implements View.OnTouchListener {
         }
         gameBoard[0][column] = bufor;
         level.setGameBoard(gameBoard);
-        drawBlocks(gameBoard, listOfImages);
+        afterMove();
+    }
+
+    public void afterMove() {
+        drawBlocks(level.getGameBoard(), listOfImages);
+        setAnim(moves, R.anim.anim_moves_blur);
+        moves.setText(Integer.parseInt(moves.getText().toString())+1+"");
+        checkStars(level, img_third_star, img_second_star, Integer.parseInt(moves.getText().toString()));
+        if (checker(level.getGameBoard(), level.getResultBoard())) {
+            ResultDialog resultDialog = new ResultDialog(moves.getContext(), level.getLevelNumber(), Short.parseShort(moves.getText().toString()), level.getThreeStarsCount(), level.getTwoStarsCount());
+            resultDialog.show();
+        }
     }
 }

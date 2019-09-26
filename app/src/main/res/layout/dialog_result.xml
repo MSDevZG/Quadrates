@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="400dp"
+    android:layout_height="700dp"
+    android:background="@drawable/background">
+
+    <ImageView
+        android:id="@+id/img_background_win"
+        android:layout_width="900dp"
+        android:layout_height="900dp"
+        android:layout_gravity="center"
+        android:background="@drawable/background_win_svg" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_level"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".1"
+            android:fontFamily="@font/baloo"
+            android:gravity="center"
+            android:text="@string/LEVEL"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/text_result"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".2"
+            android:fontFamily="@font/baloo"
+            android:gravity="center"
+            android:text="@string/PERFECT"
+            android:textColor="#FFDC01" />
+
+        <TextView
+            android:id="@+id/text_moves_number"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".2"
+            android:fontFamily="@font/baloo"
+            android:gravity="center_horizontal"
+            android:includeFontPadding="false"
+            android:text="0"
+            android:textColor="#FFDC01" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:background="@drawable/img_star_full_small"
+            android:scaleType="fitXY" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".1"
+            android:padding="12dp">
+
+            <ImageView
+                android:id="@+id/img_menu"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".2"
+                android:src="@drawable/img_button_menu"
+                android:scaleType="fitEnd"/>
+
+            <ImageView
+                android:id="@+id/img_repeat"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".2"
+                android:src="@drawable/img_button_repeat" />
+
+            <TextView
+                android:id="@+id/img_next_level"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".5"
+                android:background="@drawable/img_button_red"/>
+        </TableRow>
+    </LinearLayout>
+</FrameLayout>
